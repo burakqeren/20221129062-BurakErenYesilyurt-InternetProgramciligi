@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background: #007bff;
+        background: linear-gradient(to right, #0062E6, #33AEFF);
+    }
+
+    .card-img-left {
+        width: 45%;
+        background: scroll center url('https://fastly.picsum.photos/id/4/800/800.jpg?blur=2&hmac=yw-ODMyidajYqKlKmB3x7cAdTKCi49rcr9mBnetMjZg');
+        background-size: cover;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        padding: 0.75rem 1rem;
+    }
+</style>
+@model RegisterModelView
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <h5 class="card-title text-center mb-5 fw-light fs-5">Öğretmen Kayıt Ol</h5>
+                    <form asp-action="Register" asp-controller="Teachers" method="post" enctype="multipart/form-data">
+                        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+
+                        <label asp-for="FullName"></label>
+                        <div class="form-floating mb-3">
+                        
+                            <input asp-for="FullName" class="form-control" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Email"></label>
+                        <div class="form-floating mb-3">
+                            
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <hr>
+                        <label asp-for="UserName"></label>
+                        <div class="form-floating mb-3">
+                            
+                            <input asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Password"></label>
+                        <div class="form-floating mb-3">
+                          
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <label asp-for="PasswordConfirm"></label>
+                        <div class="form-floating mb-3">
+                            
+                            <input type="password" asp-for="PasswordConfirm" class="form-control" />
+                            <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                        </div>
+                        <label asp-for="City"></label>
+                        <div class="form-floating mb-3">
+                         
+                            <input type="password" asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mb-2">
+                            <input type="submit" value="Kaydet" class="btn btn-primary" />
+                        </div>
+
+                        <a asp-action="Login" asp-controller="Home" class="btn btn-link">Oturum Aç</a>
+
+                        <hr class="my-4">
+
+                       
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

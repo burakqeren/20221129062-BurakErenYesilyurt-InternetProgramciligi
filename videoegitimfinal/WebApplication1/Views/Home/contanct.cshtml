@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "contanct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style> body {
+
+    background-color:paleturquoise
+
+}</style>
+
+@model IletisimViewModel
+<div class="col-lg-12 mb-sm-30">
+    <h3>Bize Ulaşın</h3>
+    <form asp-action="contanct" asp-controller="Home" method="post">
+        <div class="row">
+            <div class="col-md-6 mb10">
+                <div class="field-set">
+                    <label>Adınız : </label>
+                    <input asp-for="Name" class="form-control"  required>
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="col-md-6 mb10">
+                <div class="field-set">
+                    <label>Soyadınız Adresiniz : </label>
+                    <input asp-for="Surname" class="form-control"  required>
+                    <span asp-validation-for="Surname"></span>
+                </div>
+            </div>
+            <div class="col-md-12 mb10">
+                <div class="field-set">
+                    <label>E-Mail Adresiniz : </label>
+                    <input asp-for="Email" class="form-control"  required>
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="field-set mb20">
+            <label>Mesajınız : </label>
+            <textarea asp-for="Message" rows="10" class="form-control" required></textarea>
+            <span asp-validation-for="Message"></span>
+        </div>
+        <button type="submit" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mesaj Gönder">
+            Mesaj Gönderin.
+        </button>
+    </form>
+</div>
+

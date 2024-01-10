@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "DersGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<VideoViewModel>
+@foreach(var item in Model)
+{
+    <div class="container">
+        <div class="col-md-12">
+            <div class="ratio ratio-16x9">
+                <video controls="controls">
+                    <source src="~/Videos/@item.Kayıt" type="video/mp4" />
+                    @item.Kayıt
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p><strong> Video Adı :</strong> @item.Name </p>
+            <p><strong> Video Açıklaması :</strong>  @item.Description </p>
+        </div>
+    </div>
+
+}
+
+
+
+
+
+

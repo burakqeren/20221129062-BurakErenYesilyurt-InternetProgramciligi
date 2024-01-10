@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "KategoriBul";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<VideoViewModel>
+
+<div class="container">
+    <div class="alert alert-dark text-center" role="alert">
+        <p>@ViewBag.Isim Dersleri  </p>
+    </div>
+</div>
+
+@foreach(var item in Model)
+{
+    <div class="card mb-3">
+
+        <style> body {
+            
+            background-color:paleturquoise
+        }  
+        </style>
+        <img src="~/image/cardresim.png" height="300px;" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Description.Substring(0,15).....</p>
+            <a asp-controller="Home" asp-action="DersGetir" asp-route-Id="@item.Id" class="btn btn-primary"> Video İzle </a>
+        </div>
+    </div>
+
+    
+    
+   
+   
+}

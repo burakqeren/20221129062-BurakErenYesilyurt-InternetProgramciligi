@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "DersGuncelle";
+    Layout = "~/Views/Shared/_AdminLTE.cshtml";
+}
+
+@model VideoViewModel
+<form asp-action="DersGuncelle" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <div>
+        <label asp-for="Name"></label>
+        <input class="form-control form-control-lg" asp-for="Name" atype="text" placeholder="Haber Başlığını Giriniz" aria-label=".form-control-lg example">
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>(en az 25 karaker giriniz)
+        <textarea rows="15" class="form-control" asp-for="Description" aria-label="Description"></textarea>
+        <span asp-validation-for="Description" aria-label="Description"></span>
+    </div>
+
+    <div>
+        <label asp-for="EgitimId"></label>
+        @Html.DropDownListFor(x=>x.EgitimId,(List<SelectListItem>)ViewBag.EgitimListesi,new {@class="form-control",required="required"})
+        <span asp-validation-for="EgitimId" aria-label="Haber Detayı"></span>
+    </div>
+
+   
+    <button type="submit" class="btn btn-success">Güncelle </button>
+
+</form>
+
+
